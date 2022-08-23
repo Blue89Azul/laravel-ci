@@ -22,7 +22,7 @@ class ArticleControllerTest extends TestCase
     public function testAuthCreate() {
         $user = factory(User::class)->create();
 
-        $response = $this->actionAs($user)
+        $response = $this->actingAs($user)
          ->get(route("articles.create"));
 
         $response->assertStatus(200)
