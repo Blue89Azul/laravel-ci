@@ -28,6 +28,13 @@ class ArticleTest extends TestCase
     }
 
     public function testIsLikedByAnother() {
-        
+        $article = factory(Article::class)->create();
+        $user    = factory(User::class)->create();
+        $another = factory(User::class)->create();
+        $article->likes()->attach($another);
+
+        $result = $article->isLikedBy($user);
+
+        $this->assertFalse($result);
     }
 }
