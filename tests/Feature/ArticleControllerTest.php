@@ -8,7 +8,7 @@ use Tests\TestCase;
 
 class ArticleControllerTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase; 
     public function testIndex() {
         $response = $this->get(route("articles.index"));
         $response->assertStatus(200)->assertViewIs("articles.index");
