@@ -11,7 +11,7 @@ class ArticleControllerTest extends TestCase
     use RefreshDatabase;
     public function testIndex() {
         $response = $this->get(route("articles.index"));
-        $response->assertStatus(200)->assertViewIs("articles.index");
+        $response->assertStatus(400)->assertViewIs("articles.index");
     }
 
     public function testGuestCreate() {
